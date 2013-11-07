@@ -11,6 +11,12 @@
     }
   },
 
+  "icons": { 
+    "16": "assets/serialSynth16.png",
+    "48": "assets/serialSynth48.png",
+    "128": "assets/serialSynth128.png"
+  },
+
   "permissions": [
     "serial"
   ]

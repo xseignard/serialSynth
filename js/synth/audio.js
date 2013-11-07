@@ -53,13 +53,13 @@
             this.source.type = 'sine';
         }
         // some starting values values for the nodes
-        this.nodes.feedbackGain.gain.value = 0.4;
+        this.nodes.feedbackGain.gain.value = 0.7;
         this.nodes.delay.delayTime.value = 0.5;
         //this.source.frequency.value = 200;
         this.nodes.filter.frequency.value = 200;
         // these values won't be touched
         this.nodes.filter.type = 'lowpass';
-        this.nodes.volume.gain.value = 0.4;
+        this.nodes.volume.gain.value = 1;
         this.nodes.oscVolume.gain.value = 1;
         // connect the nodes
         this.source.connect(this.nodes.oscVolume);
@@ -110,7 +110,7 @@
      * @param {Object} data - some object with the right properties to update the nodes
      */
     Audio.prototype.update = function(data) {
-        this.source.frequency.value = map(data.fr, 0,1023, 0, 1000);
+        //this.source.frequency.value = map(data.fr, 0,1023, 0, 300);
         this.nodes.filter.frequency.value = map(data.fi, 0,1023, this.min, this.max);
         this.nodes.delay.delayTime.value = map(data.de, 0, 1023, 0, 0.999);
         this.nodes.feedbackGain.gain.value = map(data.fe, 0, 1023, 0, 0.9);
